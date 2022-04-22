@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ECDROM=
+CDROM=OpenStep-Install-4.2.iso
+HARD1=openstep4.chd
+HARD2=
+SCSICD=
+SCSIH1=
+FLOP1=openstep42/4.2_Install_Disk.ima
+FLOP2=

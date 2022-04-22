@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CDROM=
+HARD1=
+HARD2=
+SCSICD=nextstep_3.3_intel.iso
+SCSIH1=nextstep33.chd
+FLOP1=nextstep33/3.3_Boot_Disk.img
+FLOP2=

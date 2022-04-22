@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#CDROM=os2cdrom.iso
+HARD1=os2warp4.chd
+HARD2=
+#FLOP1=os2/INSTALL.DSK
+FLOP2=

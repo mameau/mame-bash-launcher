@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#set -x
+
+### GENERAL
+MAMEBASE=${HOME}/games/emulator-mame
+PROFILES=./profiles
+MAMELOCAL=/mnt/mame-media
+#MAMELOCAL=${MAMEBASE}/_local
+NVRAMPATH=${MAMELOCAL}/nvram
+FLOPPATH=${MAMELOCAL}/floppies
+HDDPATH=${MAMELOCAL}/hdd
+CDPATH=${MAMELOCAL}/cdrom
+
+
+### MACHINE
+RAMSIZE=${RAMSIZE:-64M}
+VGA=${VGA:-svga_s3}
+SND=${SND:-sblaster_16}
+MODEM=127.0.0.1
+PORT=25232
+NETWORK=${NETWORK:-ne2000}
+SERIAL=${SERIAL:-}

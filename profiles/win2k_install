@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CDROM=W2PIS_EN.iso
+HARD1=win2k.chd
+HARD2=
+SCSICD=
+SCSIH1=
+FLOP1=SBM.IMA
+FLOP2=

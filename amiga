@@ -1,0 +1,46 @@
+#!/bin/bash
+
+set -x
+. settings/general
+
+PROFILE_NAME=$1
+PROFILE=${PROFILES}/${PROFILE_NAME}
+[ ! -f ${PROFILE} ] && echo "Couldn't fine ${PROFILE}, exiting" && exit 1
+. ${PROFILE}
+
+function run_amiga {
+  MACHINE=${1:-a500}
+
+  ### GENERAL OPTIONS
+  OPTIONS="-skip_gameinfo"
+
+  ### FLOPPIES
+  [ ! -z "${FLOP1}" ] && OPTIONS+=" -fdc:0 35dd -floppydisk ${FLOPPATH}/${FLOP1}"
+  [ ! -z "${FLOP2}" ] && OPTIONS+=" -fdc:1 35dd -floppydisk ${FLOPPATH}/${FLOP2}"
+
+  #### HARD DISK
+  if [ ! -z "${HARD1}" ]
+  then
+    if [ ${MACHINE} == "a500" ]
+    then
+      OPTIONS+=" -slot:ar590 -harddisk ${HDDPATH}/${HARD1}"
+    else
+      OPTIONS+=" -harddisk ${HDDPATH}/${HARD1}"
+    fi
+  fi
+  #[ ! -z "${HARD2}" ] && OPTIONS+=" -board3:ide:ide:1 hdd -harddisk ${HDDPATH}/${HARD2}"
+  #[ ! -z "${SCSIH1}" ] && OPTIONS+=" -isa3 aha1542a -isa3:aha1542a:scsi:0 harddisk -harddisk ${HDDPATH}/${SCSIH1}"
+
+  #### SERIAL
+  [ ! -z "${SERIAL}" ] && OPTIONS+=" -rs232 ${SERIAL}"
+  [ ! -z "${BITB}" ] && OPTIONS+=" -bitb ${BITB}"
+  
+  #### NVRAM
+  NVRAM_PROFILE=${NVRAMPATH}/${PROFILE_NAME}
+  [ ! -d ${NVRAM_PROFILE} ] && mkdir ${NVRAM_PROFILE}
+  OPTIONS+=" -nvram_directory ${NVRAM_PROFILE}"
+
+  cd ${MAMEBASE}
+  ./mame ${MACHINE} ${OPTIONS}
+}
+

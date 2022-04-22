@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CDROM=EN_WIN2000_PRO_SP4.ISO
+HARD1=windows2ksp4.chd
+HARD2=
+SCSICD=
+SCSIH1=
+FLOP1=
+FLOP2=

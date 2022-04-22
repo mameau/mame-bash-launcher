@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CDROM=Win95_OSR25.iso
+HARD1=win95.chd
+HARD2=
+SCSICD=
+SCSIH1=
+FLOP1=win98boot.ima
+FLOP2=
+SERIAL="-board2:comat:serport1 null_modem -bitb /dev/ttyS0"
+NETWORK=

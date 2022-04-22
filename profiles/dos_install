@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# CYLS:256,HEADS:16,SECS:50,BPS:512
+HARD1=mame37b14b.chd
+FLOP1=MS-DOS_6.22_Disk_1_Setup.IMA
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+FLOP1="amiga/ATalk_III_v1e_1986.adf"
+SERIAL="null_modem"
+PORT=25232
+BITB=socket.localhost:${PORT}

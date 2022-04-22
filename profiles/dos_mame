@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# CYLS:256,HEADS:16,SECS:50,BPS:512
+HARD1=mame07b.chd
+#HARD1=msdos622.chd
+FLOP1=mame07b.ima
+

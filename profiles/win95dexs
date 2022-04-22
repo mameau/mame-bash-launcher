@@ -1,0 +1,15 @@
+#!/bin/bash
+
+CDROM=Win95_OSR25.iso
+HARD1=win95dex.chd
+HARD2=
+SCSICD=
+SCSIH1=
+FLOP1=
+FLOP2=
+SERIAL=null_modem
+#BITB=socket.127.0.0.1:23455
+BITB=/dev/ttyS0
+NETWORK=
+#VGA=s3virgedx
+VGA=svga_et4k
