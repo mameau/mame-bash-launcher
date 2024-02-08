@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=ct486
 CDROM=
 HARD1=w4w311.chd
 HARD2=

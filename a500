@@ -1,5 +1,0 @@
-#!/bin/bash
-
-. amiga
-
-run_amiga a500

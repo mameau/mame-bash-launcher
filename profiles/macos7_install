@@ -1,0 +1,10 @@
+MACHINE=maciici
+CDROM="Apple_Legacy_Recovery.iso"
+HARD1=macos7.chd
+HARD2=
+FLOP1=
+FLOP2=
+RAMSIZE=8M
+VGA=
+SND=
+NETWORK=

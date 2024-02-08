@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=
 CDROM=
 HARD1=
 HARD2=

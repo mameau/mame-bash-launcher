@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=ct486
 # CYLS:256,HEADS:16,SECS:50,BPS:512
 HARD1=mame07b.chd
 #HARD1=msdos622.chd

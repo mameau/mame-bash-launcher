@@ -1,1 +1,4 @@
 nvram/*
+*.log
+diff/*
+_old/*

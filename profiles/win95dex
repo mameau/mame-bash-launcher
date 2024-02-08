@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=ct486
 CDROM=Win95_OSR25.iso
 HARD1=win95dex.chd
 HARD2=
@@ -7,10 +6,11 @@ SCSICD=
 SCSIH1=
 FLOP1=
 FLOP2=
-#SERIAL=null_modem
-SERIAL=rs232_sync_io
+SERIAL1=logitech_mouse
+SERIAL2=null_modem
 BITB=socket.127.0.0.1:23455
-#BITB=/dev/ttyS0
+#BITB=/dev/ttyUSB0
 NETWORK=
 #VGA=s3virgedx
 VGA=svga_et4k
+WINDOWED=1

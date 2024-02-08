@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=???
 ECDROM=
 CDROM=OpenStep-Install-4.2.iso
 HARD1=openstep4.chd

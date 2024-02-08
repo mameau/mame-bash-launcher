@@ -1,29 +1,6 @@
-#!/bin/bash
-
-RAMSIZE=128M
-HARD1=$HOME/games/emulator-mame/_local/test/4gb.chd
-CDROM=$HOME/Downloads/haiku-r1beta2-x86_gcc2h-anyboot/haiku-r1beta2-hrev54154_111-x86_gcc2h-anyboot.iso
-MODEM=127.0.0.1
-VGA=svga_s3
-SND=sblaster_16
-PORT=${1:-25232}
-
-
-function run_bbs {
-./mame64 at586 \
-  -skip_gameinfo \
-  -pcibus:1:i82371ab:ide:1 hdd \
-  -hard1 "${HARD1}" \
-  -pcibus:1:i82371ab:ide:0 cdrom \
-  -cdrom ${CDROM} \
-  -isa1 ${VGA} \
-  -isa2 ${SND} \
-  -ramsize $RAMSIZE \
-  -pcibus:1:i82371ab:board2:comat:serport0 logitech_mouse \
-  -pcibus:1:i82371ab:board2:comat:serport1 null_modem \
-  -bitb socket.${MODEM}:25232
-}
-
-
-run_bbs 
-#run_bbs 25233 1 1
+MACHINE=ct486
+CDROM=beos5pro.iso
+HARD1=4GB_ban.chd
+HARD2=
+FLOP1=SBM.IMA
+FLOP2=

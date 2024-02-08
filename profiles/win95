@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=ct486
 CDROM=
 HARD1=win95.chd
 HARD2=
@@ -9,3 +8,4 @@ FLOP1=
 FLOP2=
 SERIAL="-board2:comat:serport1 null_modem -bitb /dev/ttyS0"
 NETWORK=
+RAMSIZE=64M

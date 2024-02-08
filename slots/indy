@@ -1,0 +1,37 @@
+MACHINE=${MACHINE:-indy_4610}
+
+### GENERAL OPTIONS
+OPTIONS="-skip_gameinfo -mouse -nomaximize"
+[ ! -z "${HOMEPATH}" ] && OPTIONS+=" -homepath ${HOMEPATH}"
+
+### RESOLUTION
+[ ! -z "${RESOLUTION}" ] && OPTIONS+=" -resolution ${RESOLUTION}"
+
+### FLOPPIES
+[ ! -z "${FLOP1}" ] && OPTIONS+=" -flop1 ${FLOPPATH}/${FLOP1}"
+[ ! -z "${FLOP2}" ] && OPTIONS+=" -flop2 ${FLOPPATH}/${FLOP2}"
+
+#### HARD DISK
+[ ! -z "${HARD1}" ] && OPTIONS+=" -scsibus:1 harddisk -hard ${HDDPATH}/${HARD1}"
+[ ! -z "${HARD2}" ] && OPTIONS+=" -scsibus:2 harddisk -hard ${HDDPATH}/${HARD2}"
+
+#### CDROM
+[ ! -z "${CDROM}" ] && OPTIONS+=" -scsibus:6 cdrom -cdrom ${CDROM}"
+
+#### SERIAL
+[ ! -z "${SERIAL1}" ] && OPTIONS+=" -ioc2:rs232a ${SERIAL1}"
+[ ! -z "${SERIAL2}" ] && OPTIONS+=" -ioc2:rs232b ${SERIAL2}"
+[ ! -z "${BITB}" ] && OPTIONS+=" -bitb ${BITB}"
+
+#### BIOS
+[ ! -z "${BIOS}" ] && OPTIONS+=" -bios ${BIOS}"
+
+### VIEW
+[ ! -z "${VIEW}" ] && OPTIONS+=" -view ${VIEW}"
+
+### using the isa ide card results in hdd controller failure in bios
+#[ ! -z "${CDROM}" ] && OPTIONS+=" -isa3 ide -isa3:ide:ide:0 cdrom -cdrom ${CDPATH}/${CDROM}"
+
+export MACHINE
+export OPTIONS
+

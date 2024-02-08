@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=a500
 FLOP1="amiga/ATalk_III_v1e_1986.adf"
 SERIAL="null_modem"
 PORT=25232

@@ -1,0 +1,24 @@
+MACHINE=${1:-at586}
+
+### GENERAL OPTIONS
+OPTIONS="-skip_gameinfo -isa1 ${VGA} -isa2 ${SND} -ramsize ${RAMSIZE}"
+
+### FLOPPIES
+[ ! -z "${FLOP1}" ] && OPTIONS+=" -flop1 ${FLOPPATH}/${FLOP1}"
+[ ! -z "${FLOP2}" ] && OPTIONS+=" -flop2 ${FLOPPATH}/${FLOP2}"
+
+#### HARD DISK
+[ ! -z "${HARD1}" ] && OPTIONS+=" -pcibus:1:i82371ab:ide:1 hdd -harddisk ${HDDPATH}/${HARD1}"
+[ ! -z "${HARD2}" ] && OPTIONS+=" -pcibus:1:i82371ab:ide:0 hdd -harddisk ${HDDPATH}/${HARD2}"
+
+#### CDROM
+[ ! -z "${CDROM}" ] && OPTIONS+=" -pcibus:1:i82371ab:ide:0 cdrom -cdrom ${CDPATH}/${CDROM}"
+
+#### NETWORK
+[ ! -z "${NETWORK}" ] && OPTIONS+=" -isa4 ${NETWORK}"
+
+### MODEM
+#[ ! -z "${MODEM}" ] && OPTIONS+=" -pcibus:1:i82371ab:board2:comat:serport1 null_modem"
+
+export MACHINE
+export OPTIONS

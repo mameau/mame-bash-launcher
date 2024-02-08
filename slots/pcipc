@@ -1,0 +1,36 @@
+MACHINE=${MACHINE:-pcipc}
+
+### GENERAL OPTIONS
+OPTIONS="-skip_gameinfo -isa1 ${VGA} -isa2 ${SND} -ramsize ${RAMSIZE}"
+
+### FLOPPIES
+[ ! -z "${FLOP1}" ] && OPTIONS+=" -flop1 ${FLOPPATH}/${FLOP1}"
+[ ! -z "${FLOP2}" ] && OPTIONS+=" -flop2 ${FLOPPATH}/${FLOP2}"
+
+#### HARD DISK
+[ ! -z "${HARD1}" ] && OPTIONS+=" -pci:07.1:ide1:0 hdd -harddisk ${HDDPATH}/${HARD1}"
+[ ! -z "${HARD2}" ] && OPTIONS+=" -pci:07.1:ide1:1 hdd -harddisk ${HDDPATH}/${HARD2}"
+[ ! -z "${SCSIH1}" ] && OPTIONS+=" -isa3 aha1542a -isa3:aha1542a:scsi:0 harddisk -harddisk ${HDDPATH}/${SCSIH1}"
+
+#### CDROM
+[ ! -z "${CDROM}" ] && OPTIONS+=" -pci:07.1:ide1:1 cdrom -cdrom ${CDPATH}/${CDROM}"
+[ ! -z "${PXCD}" ] && OPTIONS+=" -pci:07.1:ide1:1 px320a -cdrom ${CDPATH}/${PXCD}"
+[ ! -z "${ECDROM}" ] && OPTIONS+=" -isa3 ide -isa3:ide:ide:0 cdrom -cdrom ${CDPATH}/${ECDROM}"
+[ ! -z "${SCSICD}" ] && OPTIONS+=" -isa3 aha1542a -isa3:aha1542a:scsi:6 cdrom -cdrom ${CDPATH}/${SCSICD}"
+
+#### NETWORK
+[ ! -z "${NETWORK}" ] && OPTIONS+=" -isa4 ${NETWORK}"
+
+#### SERIAL
+[ ! -z "${SERIAL1}" ] && OPTIONS+=" -serport0 ${SERIAL1}"
+[ ! -z "${SERIAL2}" ] && OPTIONS+=" -serport1 ${SERIAL2}"
+[ ! -z "${BITB}" ] && OPTIONS+=" -bitb ${BITB}"
+
+#### BIOS
+[ ! -z "${BIOS}" ] && OPTIONS+=" -bios ${BIOS}"
+
+### using the isa ide card results in hdd controller failure in bios
+#[ ! -z "${CDROM}" ] && OPTIONS+=" -isa3 ide -isa3:ide:ide:0 cdrom -cdrom ${CDPATH}/${CDROM}"
+
+export MACHINE
+export OPTIONS

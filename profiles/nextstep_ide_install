@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=ct486
 CDROM=nexstep_3.3_intel.chd
 HARD1=nextstep33.chd
 HARD2=

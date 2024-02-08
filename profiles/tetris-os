@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=ct486
 CDROM=tetris-os.iso
 HARD1=win2k.chd
 HARD2=

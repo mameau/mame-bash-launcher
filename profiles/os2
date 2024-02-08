@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=ct486
 #CDROM=os2cdrom.iso
 HARD1=os2warp4.chd
 HARD2=

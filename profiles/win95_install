@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=ct486
 CDROM=Win95_OSR25.iso
 HARD1=win95.chd
 HARD2=

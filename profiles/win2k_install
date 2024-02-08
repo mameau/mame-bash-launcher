@@ -1,5 +1,4 @@
-#!/bin/bash
-
+MACHINE=at586
 CDROM=W2PIS_EN.iso
 HARD1=win2k.chd
 HARD2=

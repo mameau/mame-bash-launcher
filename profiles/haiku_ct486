@@ -1,7 +1,0 @@
-#!/bin/bash
-
-CDROM=beos5pro.iso
-HARD1=4GB_ban.chd
-HARD2=
-FLOP1=SBM.IMA
-FLOP2=

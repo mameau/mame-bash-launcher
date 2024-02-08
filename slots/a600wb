@@ -1,0 +1,7 @@
+MACHINE=${MACHINE:-a600}
+
+#### HARD DISK
+[ ! -z "${HARD1}" ] OPTIONS+=" -harddisk ${HDDPATH}/${HARD1}"
+
+export MACHINE
+export OPTIONS

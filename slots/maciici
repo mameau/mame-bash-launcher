@@ -1,0 +1,32 @@
+MACHINE=${MACHINE:-maciici}
+
+### GENERAL OPTIONS
+OPTIONS="-skip_gameinfo -ramsize ${RAMSIZE}"
+
+### FLOPPIES
+[ ! -z "${FLOP1}" ] && OPTIONS+=" -flop1 ${FLOPPATH}/${FLOP1}"
+[ ! -z "${FLOP2}" ] && OPTIONS+=" -flop2 ${FLOPPATH}/${FLOP2}"
+
+#### HARD DISK
+[ ! -z "${HARD1}" ] && OPTIONS+=" -scsi:0 harddisk -harddisk ${HDDPATH}/${HARD1}"
+[ ! -z "${HARD2}" ] && OPTIONS+=" -scsi:1 harddisk -harddisk ${HDDPATH}/${HARD2}"
+
+#### CDROM
+[ ! -z "${CDROM}" ] && OPTIONS+=" -scsi:1 cdrom -cdrom ${CDPATH}/${CDROM}"
+
+#### NETWORK
+[ ! -z "${NETWORK}" ] && OPTIONS+=" -nbe ${NETWORK}"
+
+#### SERIAL
+#[ ! -z "${SERIAL}" ] && OPTIONS+=" -board2:comat:serport0 ${SERIAL}"
+#[ ! -z "${SERIAL}" ] && OPTIONS+=" -board2:comat:serport1 logitech_mouse"
+#[ ! -z "${BITB}" ] && OPTIONS+=" -bitb ${BITB}"
+
+#### BIOS
+[ ! -z "${BIOS}" ] && OPTIONS+=" -bios ${BIOS}"
+
+### using the isa ide card results in hdd controller failure in bios
+#[ ! -z "${CDROM}" ] && OPTIONS+=" -isa3 ide -isa3:ide:ide:0 cdrom -cdrom ${CDPATH}/${CDROM}"
+
+export MACHINE
+export OPTIONS

@@ -1,7 +1,7 @@
 # mame-bash-launcher
-profile launcer for PCs in MAME
+profile launcher for PCs in MAME
 
-my profiled launcher for MAME computers, this was built for my use and publsshed here as an
+my profiled launcher for MAME computers, this was built for my use
 
 it wont setup the space for you
 
@@ -18,3 +18,18 @@ CDPATH=${MAMELOCAL}/cdrom
 ```
 
 check one of the `profiles` for an example on how to set one up
+
+layout
+```
+machines/
+slots/
+profiles/
+settings
+./rmame
+```
+
+running
+```
+./rmame win95
+```
+

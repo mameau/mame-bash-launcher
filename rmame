@@ -1,0 +1,35 @@
+#!/bin/bash
+
+OPTIONS=""
+
+source settings/general
+source settings/completion
+
+PROFILE_NAME=$1
+PROFILE=${PROFILES}/${PROFILE_NAME}
+[ ! -f ${PROFILE} ] && echo "Couldn't find ${PROFILE}, exiting" && exit 1
+source ${PROFILE}
+
+#### MACHINE
+[ -z $MACHINE ] && echo "MACHINE not set in profile ${PROFILE}" && exit 1
+MACHINE_PROFILE=machines/${MACHINE}
+[ ! -f ${MACHINE_PROFILE} ] && echo "Couldn't find ${MACHINE_PROFILE}, exiting" && exit 1
+source $MACHINE_PROFILE
+
+#### NVRAM
+NVRAM_PROFILE=${NVRAMPATH}/${PROFILE_NAME}
+[ ! -d ${NVRAM_PROFILE} ] && mkdir -p ${NVRAM_PROFILE}
+OPTIONS+=" -nvram_directory ${NVRAM_PROFILE}"
+
+#### DIFF
+DIFF_PROFILE=${DIFFPATH}/${PROFILE_NAME}/${MACHINE}
+[ ! -d ${DIFF_PROFILE} ] && mkdir -p ${DIFF_PROFILE}
+OPTIONS+=" -diff_directory ${DIFF_PROFILE}"
+
+#### WINDOWED
+[ ${WINDOWED} -ne 0 ] && OPTIONS+=" -w "
+
+cd ${MAMEBASE}
+#./mame-modded ${MACHINE} ${OPTIONS}
+
+./mame ${MACHINE} ${OPTIONS}

@@ -1,0 +1,6 @@
+MACHINE=ct486
+# CYLS:986,HEADS:16,SECS:52,BPS:512
+HARD1=maxtorbj.chd
+#FLOP1=compaq_dos/compaq_dos_4.01/Disk00.img
+FLOP1=win98boot.ima
+WINDOWED=1
