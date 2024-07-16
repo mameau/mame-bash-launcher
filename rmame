@@ -29,6 +29,9 @@ OPTIONS+=" -diff_directory ${DIFF_PROFILE}"
 #### WINDOWED
 [ ${WINDOWED} -ne 0 ] && OPTIONS+=" -w "
 
+#### UI_ACTIVE
+[ ${UI_ACTIVE} -ne 0 ] && OPTIONS+=" -ui_active "
+
 cd ${MAMEBASE}
 #./mame-modded ${MACHINE} ${OPTIONS}
 
