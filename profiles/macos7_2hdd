@@ -1,5 +1,6 @@
 MACHINE=maciici
-CDROM=Apple_Legacy_Recovery.iso
+#CDROM=Apple_Legacy_Recovery.iso
+CDROM=""
 HARD1=macos711.chd
 HARD2=macos7.chd
 FLOP1=

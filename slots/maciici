@@ -9,7 +9,7 @@ OPTIONS="-skip_gameinfo -ramsize ${RAMSIZE}"
 
 #### HARD DISK (hd1 is hardcoded at scsi:6)
 [ ! -z "${HARD1}" ] && OPTIONS+=" -scsi:6 harddisk -harddisk ${HDDPATH}/${HARD1}"
-[ ! -z "${HARD2}" ] && OPTIONS+=" -scsi:5 harddisk -harddisk2 ${HDDPATH}/${HARD2}"
+[ ! -z "${HARD2}" ] && OPTIONS+=" -scsi:5 harddisk -hard2 ${HDDPATH}/${HARD2}"
 
 #### CDROM (hardcoded internal on scsi:3 is not exposed through listslots
 [ ! -z "${CDROM}" ] && OPTIONS+=" -cdrom ${CDPATH}/${CDROM}"

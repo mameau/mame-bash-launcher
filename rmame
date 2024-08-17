@@ -6,6 +6,23 @@ source settings/general
 source settings/completion
 
 PROFILE_NAME=$1
+if [ -z ${PROFILE_NAME} ]
+then
+    echo "Need a profile, listing available"
+    select PROFILE_NAME in $(ls -lA $PROFILES | awk '{print $9}' | tr '\n' ' ') quit
+    do
+      case $PROFILE_NAME in
+      quit)
+        exit
+        ;;
+      *)
+        export $PROFILE_NAME
+        break
+        ;;
+      esac
+    done
+fi
+  
 PROFILE=${PROFILES}/${PROFILE_NAME}
 [ ! -f ${PROFILE} ] && echo "Couldn't find ${PROFILE}, exiting" && exit 1
 source ${PROFILE}
