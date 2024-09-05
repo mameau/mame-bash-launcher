@@ -1,0 +1,17 @@
+#!/bin/bash
+
+IFS=$'\n'
+SYSTEM=${1}
+
+source settings/general
+
+cd "${MAMEBASE}"
+[ -z $SYSTEM ] && exit 1
+select TITLE in `./mame $SYSTEM -listsoftware 2>/dev/null | xmllint --xpath '//software/description/text()' -` quit
+do
+    [ "${TITLE}" == "quit" ] && exit
+    XPATHSTR="string(//software/description[text() = \"${TITLE}\"]/parent::software/@name)"
+    SOFTWARE=`./mame $SYSTEM -listsoftware 2>/dev/null | xmllint --xpath $XPATHSTR -`
+    #echo $TITLE $SOFTWARE
+    ./mame -w $SYSTEM $SOFTWARE
+done

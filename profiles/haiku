@@ -1,6 +1,8 @@
-MACHINE=ct486
-CDROM=beos5pro.iso
+MACHINE=at486
+#CDROM=beos5pro.iso
+CDROM=haiku-r1beta4-x86_gcc2h-anyboot.iso
 HARD1=4GB_ban.chd
 HARD2=
 FLOP1=SBM.IMA
 FLOP2=
+RAMSIZE=128M
