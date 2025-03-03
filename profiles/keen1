@@ -1,0 +1,4 @@
+MACHINE=ct486
+HARD1=vhd/keen1.chd
+RAMSIZE=64M
+UI_ACTIVE=1

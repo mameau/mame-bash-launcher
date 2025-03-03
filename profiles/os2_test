@@ -1,0 +1,7 @@
+MACHINE=ct486
+#CDROM=os2cdrom.iso
+HARD1=test.chd
+HARD2=
+FLOP1=win98boot.ima
+FLOP2=
+#UI_ACTIVE=1
